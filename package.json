@@ -1,0 +1,26 @@
+{
+  "author": "Ikologik",
+  "bugs": {
+    "url": "https://github.com/Ikologik/node-red-ikologik-api/issues"
+  },
+  "dependencies": {
+    "axios": "^0.26.0"
+  },
+  "description": "An api for the Ikologik platform.",
+  "homepage": "https://github.com/Ikologik/node-red-ikologik-api#readme",
+  "license": "ISC",
+  "main": "IkologikApi.js",
+  "name": "@myscope/node-red-ikologik-api",
+  "node-red": {
+    "nodes": {
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ikologik/node-red-ikologik-api.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.1"
+}
