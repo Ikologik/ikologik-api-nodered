@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="357e5abe-aa52-47c4-9e20-abf32950b895" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/IkologikApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IkologikApiCredentials.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/IkologikException.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/AbstractIkologikCustomerObject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/AbstractIkologikInstallationsObject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/AbstractIkologikObject.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Alert.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/AlertType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Batch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/BatchType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Dashboard.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/DashboardWidget.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/DataImport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/DataImportType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Parameter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Report.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/ReportType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Search.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/Tag.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/domain/TagAlertType.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/AbstractIkologikCustomerService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/AbstractIkologikInstallationService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/AbstractIkologikService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/AlertService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/AlertTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/BatchService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/BatchTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/DashboardService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/DashboardWidgetService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/DashboardWidgetTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/DataImportService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/DataImportTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/InstallationService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/ReportService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/ReportTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/TagAlertTypeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/TagService.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="255vC7RyyBw849N52wpZuYyimpk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ElienMaes\Development\Ikologik\node-red-ikologik-api" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="357e5abe-aa52-47c4-9e20-abf32950b895" name="Changes" comment="" />
+      <created>1644829631908</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1644829631908</updated>
+      <workItem from="1644829633511" duration="581000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
