@@ -1,0 +1,82 @@
+
+<script type="text/javascript">
+    RED.nodes.registerType('ikologik-api',{
+        category: 'ikologik',
+        color: '#22d541',
+        defaults: {
+            name: {value:""},
+            customer:{value:""},
+            installation:{value:""},
+            creds: {value:"", type:"api-credentials"}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name|| "ikologik-api";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ikologik-api">
+    <div class="form-row">
+        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div> <div class="form-row">
+        <label for="node-input-customer"><i class="fa fa-user"></i> CustomerID</label>
+        <input type="text" id="node-input-customer" placeholder="Customer">
+    </div> <div class="form-row">
+        <label for="node-input-installation"><i class="fa fa-industry"></i> InstallationID</label>
+        <input type="text" id="node-input-installation" placeholder="Installation">
+    </div>
+    </div> <div class="form-row">
+        <label for="node-input-creds"><i class="fa fa-industry"></i> Credentials</label>
+        <input type="text" id="node-input-creds" placeholder="Credentials">
+    </div>
+<!--    <div class="form-row">-->
+<!--        <label for="node-input-url"><i class="fa fa-tag"></i> Url</label>-->
+<!--        <input type="text" id="node-input-url">-->
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--        <label for="node-input-username"><i class="fa fa-tag"></i> Username</label>-->
+<!--        <input type="text" id="node-input-username">-->
+<!--    </div>-->
+<!--    <div class="form-row">-->
+<!--        <label for="node-input-password"><i class="fa fa-tag"></i> Password</label>-->
+<!--        <input type="password" id="node-input-password">-->
+<!--    </div>-->
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('api-credentials',{
+        category: 'config',
+        defaults: {
+            url: {value:"url",required:true},
+            username: {value:"username",required:true},
+            password: {value:"password",required:true},
+        },
+        label: function() {
+            return "Credentials";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="api-credentials">
+    <div class="form-row">
+        <label for="node-config-input-url"><i class="fa fa-globe"></i> Url</label>
+        <input type="text" id="node-config-input-url" placeholder="url">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-username"><i class="fa fa-user"></i> Username</label>
+        <input type="text" id="node-config-input-username" placeholder="username">
+    </div>
+    <div class="form-row">
+        <label for="node-config-input-password"><i class="fa fa-lock"></i> Password</label>
+        <input type="text" id="node-config-input-password" placeholder>
+    </div>
+</script>
+
+<script type="text/html" data-help-name="ikologik-api">
+    <p>This node lists all the dashboards of a given customer and installation</p>
+</script>
+
