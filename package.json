@@ -6,7 +6,7 @@
   "dependencies": {
     "axios": "^0.26.0",
     "esm": "^3.2.25",
-    "ikologik-api-nodejs": "^1.0.14"
+    "ikologik-api-nodejs": "^1.0.25"
   },
   "description": "An api for the Ikologik platform.",
   "homepage": "https://github.com/Ikologik/node-red-ikologik-api#readme",
@@ -15,7 +15,7 @@
   "name": "@myscope/node-red-ikologik-api",
   "node-red": {
     "nodes": {
-      "ikologik-api": "ikologik-api.js"
+      "ikologik-batchType": "ikologik-api.js"
     }
   },
   "repository": {

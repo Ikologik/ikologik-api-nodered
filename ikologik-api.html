@@ -1,59 +1,165 @@
 
 <script type="text/javascript">
-    RED.nodes.registerType('ikologik-api',{
+    RED.nodes.registerType('ikologik-batchType',{
         category: 'ikologik',
-        color: '#22d541',
+        color: '#1ca38c',
         defaults: {
             name: {value:""},
             customer:{value:""},
             installation:{value:""},
-            creds: {value:"", type:"api-credentials"}
+            creds: {value:"", type:"api-credentials"},
+            function:{value:""}
         },
         inputs:1,
         outputs:1,
         icon: "file.png",
         label: function() {
-            return this.name|| "ikologik-api";
+            return this.name|| "ikologik-batchType";
         }
     });
 </script>
 
-<script type="text/html" data-template-name="ikologik-api">
+<script type="text/html" data-template-name="ikologik-batchType">
     <div class="form-row">
         <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
-    </div> <div class="form-row">
+    </div>
+    <div class="form-row">
+        <label for="node-input-function"><i class="fa fa-code"></i> Function</label>
+        <select type="text" id="node-input-function" placeholder="Function">
+            <option value="batchtypeGet">Batchtype get</option>
+            <option value="batchtypeList">Batchtype list</option>
+        </select>
+    </div>
+    <div class="form-row">
         <label for="node-input-customer"><i class="fa fa-user"></i> CustomerID</label>
         <input type="text" id="node-input-customer" placeholder="Customer">
-    </div> <div class="form-row">
+    </div>
+    <div class="form-row">
         <label for="node-input-installation"><i class="fa fa-industry"></i> InstallationID</label>
         <input type="text" id="node-input-installation" placeholder="Installation">
+    </div>
+    <div class="form-row" type="hidden">
+        <label for="node-input-ID"><i class="fa fa-industry"></i> ID</label>
+        <input type="text" id="node-input-ID" placeholder="ID">
     </div>
     </div> <div class="form-row">
         <label for="node-input-creds"><i class="fa fa-industry"></i> Credentials</label>
         <input type="text" id="node-input-creds" placeholder="Credentials">
     </div>
-<!--    <div class="form-row">-->
-<!--        <label for="node-input-url"><i class="fa fa-tag"></i> Url</label>-->
-<!--        <input type="text" id="node-input-url">-->
-<!--    </div>-->
-<!--    <div class="form-row">-->
-<!--        <label for="node-input-username"><i class="fa fa-tag"></i> Username</label>-->
-<!--        <input type="text" id="node-input-username">-->
-<!--    </div>-->
-<!--    <div class="form-row">-->
-<!--        <label for="node-input-password"><i class="fa fa-tag"></i> Password</label>-->
-<!--        <input type="password" id="node-input-password">-->
-<!--    </div>-->
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ikologik-batchFieldType',{
+        category: 'ikologik',
+        color: '#1ca38c',
+        defaults: {
+            name: {value:""},
+            cust:{value:""},
+            install:{value:""},
+            batchFieldTypeID:{value:""},
+            credens: {value:"", type:"api-credentials"},
+            funct:{value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name|| "ikologik-batchFieldType";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ikologik-batchFieldType">
+    <div class="form-row">
+        <label for="node-input-batchFieldType-name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-batchFieldType-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-funct"><i class="fa fa-code"></i> Function</label>
+        <select type="text" id="node-input-funct" placeholder="Function">
+            <option value="batchfieldtypeGet">BatchFieldType getbyID</option>
+            <option value="batchfieldtypeList">BatchFieldType list</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-cust"><i class="fa fa-user"></i> CustomerID</label>
+        <input type="text" id="node-input-cust" placeholder="Customer">
+    </div>
+    <div class="form-row">
+        <label for="node-input-install"><i class="fa fa-industry"></i> InstallationID</label>
+        <input type="text" id="node-input-install" placeholder="Installation">
+    </div>
+    <div class="form-row" type="hidden">
+        <label for="node-input-batchFieldTypeID"><i class="fa fa-industry"></i> ID</label>
+        <input type="text" id="node-input-batchFieldTypeID" placeholder="ID">
+    </div>
+    </div> <div class="form-row">
+        <label for="node-input-credens"><i class="fa fa-industry"></i> Credentials</label>
+        <input type="text" id="node-input-credens" placeholder="Credentials">
+    </div>
+</script>
+
+<script type="text/javascript">
+    RED.nodes.registerType('ikologik-batch',{
+        category: 'ikologik',
+        color: '#1ca38c',
+        defaults: {
+            batchName: {value:""},
+            custID:{value:""},
+            installID:{value:""},
+            batchID:{value:""},
+            cred: {value:"", type:"api-credentials"},
+            func:{value:""}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "file.png",
+        label: function() {
+            return this.name|| "ikologik-batch";
+        }
+    });
+</script>
+
+<script type="text/html" data-template-name="ikologik-batch">
+    <div class="form-row">
+        <label for="node-input-batchName"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-batchName" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-func"><i class="fa fa-code"></i> Function</label>
+        <select type="text" id="node-input-func" placeholder="Function">
+            <option value="batchGetByID">Batch getbyID</option>
+            <option value="batchGetByCode">Batch getbyCode</option>
+            <option value="batchCreate">Batch create</option>
+            <option value="batchUpdate">Batch update</option>
+        </select>
+    </div>
+    <div class="form-row">
+        <label for="node-input-custID"><i class="fa fa-user"></i> CustomerID</label>
+        <input type="text" id="node-input-custID" placeholder="Customer">
+    </div>
+    <div class="form-row">
+        <label for="node-input-installID"><i class="fa fa-industry"></i> InstallationID</label>
+        <input type="text" id="node-input-installID" placeholder="Installation">
+    </div>
+    <div class="form-row" type="hidden">
+        <label for="node-input-batchID"><i class="fa fa-industry"></i> ID</label>
+        <input type="text" id="node-input-batchID" placeholder="ID">
+    </div>
+    </div> <div class="form-row">
+        <label for="node-input-cred"><i class="fa fa-industry"></i> Credentials</label>
+        <input type="text" id="node-input-cred" placeholder="Credentials">
+    </div>
 </script>
 
 <script type="text/javascript">
     RED.nodes.registerType('api-credentials',{
         category: 'config',
         defaults: {
-            url: {value:"url",required:true},
-            username: {value:"username",required:true},
-            password: {value:"password",required:true},
+            url: {value:"https://api.ikologik.com",required:true},
+            username: {value:"",required:true},
+            password: {value:"",required:true},
         },
         label: function() {
             return "Credentials";
@@ -76,7 +182,7 @@
     </div>
 </script>
 
-<script type="text/html" data-help-name="ikologik-api">
+<script type="text/html" data-help-name="ikologik-batchType">
     <p>This node lists all the dashboards of a given customer and installation</p>
 </script>
 
