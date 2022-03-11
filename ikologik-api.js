@@ -1,109 +1,163 @@
 
 const IkologikApi = require("ikologik-api-nodejs");
-const Batch = require("ikologik-api-nodejs/domain/Batch");
-
-const functions = {
-    batchtypeGet:{
-        customerRequired:false,
-        installationRequired:false,
-        idRequired: true,
-    },
-    installationGet:{
-        customerRequired:true,
-        installationRequired: false,
-        idRequired: true,
-    }
-}
+// const Batch = require("ikologik-api-nodejs/domain/Batch");
+//
+// const functions = {
+//     batchtypeGet:{
+//         customerRequired:false,
+//         installationRequired:false,
+//         idRequired: true,
+//     },
+//     installationGet:{
+//         customerRequired:true,
+//         installationRequired: false,
+//         idRequired: true,
+//     }
+// }
 
 module.exports =  function(RED) {
     // BatchType-node
      function IkologikBatchTypeNode(config) {
         RED.nodes.createNode(this,config);
-        this.customer = config.customer;
-        this.installation = config.installation;
-        this.id = config.id;
-        this.function = config.function;
-        this.credentials = RED.nodes.getNode(config.creds);
+        // Get configuration from node
+        this.customerId = config.batchTypeCustomerId;
+        this.installationId = config.batchTypeInstallationId;
+        this.batchTypeId = config.batchTypeId;
+        this.function = config.batchTypeFunction;
+        this.credentials = RED.nodes.getNode(config.batchTypeCredentials);
         var node = this;
-        node.on('input', async function(msg) {
-            // Add requested information to msg
-            //TODO: change msg.customer to var customer + line 36 etc
-            msg.customer = node.customer ? node.customer : msg.customer;
-            msg.installation = node.installation ? node.installation : msg.installation;
-            msg.id = node.id ? node.id : msg.id;
-            const api = await node.credentials.api;
-            if(node.function == 'batchtypeGet'){
-                msg.payload = await api.batchType.getByName(msg.customer, msg.installation,"Verpakking");
-            }else if(node.function == 'batchtypeList'){
-                msg.payload = await api.batchType.list(node.customer, node.installation);
-            }
-            const dashboard = await api.dashboard.list(this.customer, this.installation);
 
-            const report = await api.report.list(this.customer, this.installation);
-            msg.dashboard = await dashboard;
-            msg.report = await report;
+         // Functionality of node
+        node.on('input', async function(msg) {
+            // If input from node choose input, otherwise get info from message
+            var customerId = node.customerId ? node.customerId : msg.customerId;
+            var installationId = node.installationId ? node.installationId : msg.installationId;
+            var batchTypeId = node.batchTypeId ? node.batchTypeId : msg.batchTypeId;
+
+            // Use Ikologik-api for requests
+            // ! batchTypeName is hard-coded ! Pay attention when changing to a new batchTypeName
+            const api = await node.credentials.api;
+            if(node.function === 'batchTypeGetByName'){
+                msg.payload = await api.batchType.getByName(customerId, installationId,"Verpakking");
+            }else if(node.function === 'batchTypeList'){
+                msg.payload = await api.batchType.list(customerId, installationId);
+            }
             node.send(msg);
         });
     }
     RED.nodes.registerType("ikologik-batchType",IkologikBatchTypeNode);
 
+
+
      // Batchtypefield-node
     function IkologikApiBatchFieldNode(config) {
         RED.nodes.createNode(this,config);
-        this.customer = config.cust;
-        this.installation = config.install;
-        this.id = config.batchFieldTypeID;
-        this.function = config.funct;
-        this.credentials = RED.nodes.getNode(config.credens);
+        // Get configuration from node
+        this.customerId = config.batchFieldTypeCustomerId;
+        this.installationId = config.batchFieldTypeInstallationId;
+        this.batchFieldTypeId = config.batchFieldTypeId;
+        this.batchFieldTypeBatchTypeId = config.batchFieldTypeBatchTypeId;
+        this.function = config.batchFieldTypeFunction;
+        this.credentials = RED.nodes.getNode(config.batchFieldTypeCredentials);
         var node = this;
+
+        // Functionality of node
         node.on('input', async function(msg) {
-            // Add requested information to msg
-            // if input customer, choose input otherwise get customer from context
-            msg.customer = node.customer ? node.customer : msg.customer;
-            msg.installation = node.installation ? node.installation : msg.installation;
-            msg.id = node.id;
+            // If input from node choose input, otherwise get info from message
+             var customerId = node.customerId ? node.customerId : msg.customerId;
+             var installationId = node.installationId ? node.installationId : msg.installationId;
+             var batchFieldTypeId = node.batchFieldTypeId ? node.batchFieldTypeId : msg.batchFieldTypeId;
+             var batchTypeId = node.batchFieldTypeBatchTypeId ? node.batchFieldTypeBatchTypeId : msg.batchTypeId;
+
+            // Use Ikologik-api for requests
             const api = await node.credentials.api;
-            if(node.function == 'batchfieldtypeGet'){
-                msg.payload = await api.batchFieldType.getByID(msg.customer, msg.installation,msg.batchTypeID,node.id);
-            }else if(node.function == 'batchfieldtypeList'){
-                msg.payload = await api.batchFieldType.list(msg.customer, msg.installation,msg.batchTypeID);
+            if(node.function === 'batchFieldTypeGet'){
+                msg.payload = await api.batchFieldType.getById(customerId, installationId,batchTypeId,batchFieldTypeId);
+            }else if(node.function === 'batchFieldTypeList'){
+                msg.payload = await api.batchFieldType.list(customerId, installationId,batchTypeId);
             }
             node.send(msg);
         });
     }
     RED.nodes.registerType("ikologik-batchFieldType",IkologikApiBatchFieldNode);
 
+
+
     // Batch-node
     function IkologikApiBatchNode(config) {
         RED.nodes.createNode(this,config);
-        this.customer = config.custID;
-        this.installation = config.installID;
-        this.id = config.batchID;
-        this.function = config.func;
-        this.credentials = RED.nodes.getNode(config.cred);
+        // Get configuration from node
+        this.customerId = config.batchCustomerId;
+        this.installationId = config.batchInstallationId;
+        this.batchTypeId = config.batchBatchTypeId;
+        this.batchId = config.batchId;
+        this.batchCode = config.batchCode;
+        this.function = config.batchFunction;
+        this.credentials = RED.nodes.getNode(config.batchCredentials);
         var node = this;
-        node.on('input', async function(msg) {
-            // Add requested information to msg
-            // if input , choose input otherwise get from context
-            var customer = node.customer ? node.customer : msg.customerId;
-            var installation = node.installation ? node.installation : msg.installationId;
-            var batchTypeId = node.batchTypeId ? node.batchTypeId : msg.batchTypeId;
-            var code = node.id ? node.id : msg.code;
 
+        // Functionality of node
+        node.on('input', async function(msg) {
+            // If input from node choose input, otherwise get info from message
+            var customerId = node.customerId ? node.customerId : msg.customerId;
+            var installationId = node.installationId ? node.installationId : msg.installationId;
+            var batchTypeId = node.batchTypeId ? node.batchTypeId : msg.batchTypeId;
+            var batchCode = node.batchCode ? node.batchCode : msg.batchCode;
+            var batchId = node.batchId ? node.batchId : msg.batchId;
+
+            // Use Ikologik-api for requests
             const api = await node.credentials.api;
-            if(node.function == 'batchGetByID'){
-                msg.payload = await api.batch.getByID(customer, installation,code);
-            }else if(node.function == 'batchGetByCode'){
-                msg.payload = await api.batch.getByCode(customer,installation, batchTypeId,code);
-            }else if(node.function == 'batchCreate'){
-                msg.payload = await api.batch.create(customer, installation,msg.batch);
-            }else if(node.function == 'batchUpdate'){
-                msg.payload = await api.batch.update(customer, installation,msg.payload.id, msg.batch);
+            if(node.function === 'batchGetById'){
+                msg.payload = await api.batch.getById(customerId, installationId,batchId);
+            }else if(node.function === 'batchGetByCode'){
+                msg.payload = await api.batch.getByCode(customerId,installationId, batchTypeId,batchCode);
+            }else if(node.function === 'batchCreate'){
+                msg.payload = await api.batch.create(customerId, installationId,msg.batch);
+            }else if(node.function === 'batchUpdate'){
+                msg.payload = await api.batch.update(customerId, installationId,batchId, msg.batch);
             }
             node.send(msg);
         });
     }
     RED.nodes.registerType("ikologik-batch",IkologikApiBatchNode);
+
+
+
+    // BatchTrace-node
+    function IkologikApiBatchTraceNode(config) {
+        RED.nodes.createNode(this,config);
+        // Get configuration from node
+        this.customerId = config.batchTraceCustomerId;
+        this.installationId = config.batchTraceInstallationId;
+        this.batchId = config.batchTraceBatchId;
+        this.batchTraceId = config.batchTraceId;
+        this.function = config.batchTraceFunction;
+        this.credentials = RED.nodes.getNode(config.batchTraceCredentials);
+        var node = this;
+
+        // Functionality of node
+        node.on('input', async function(msg) {
+            // If input from node choose input, otherwise get info from message
+            var customerId = node.customerId ? node.customerId : msg.customerId;
+            var installationId = node.installationId ? node.installationId : msg.installationId;
+            var batchId = node.batchId ? node.batchId : msg.batchId;
+            var batchTraceId = node.batchTraceId ? node.batchTraceId : msg.batchTraceId;
+
+            // Use Ikologik-api for requests
+            const api = await node.credentials.api;
+            if(node.function === 'batchTraceGetById'){
+                msg.payload = await api.batchTrace.getById(customerId, installationId,batchId,batchTraceId);
+            }else if(node.function === 'batchTraceCreate'){
+                msg.payload = await api.batchTrace.create(customerId, installationId,batchId,msg.batchTrace);
+            }else if(node.function === 'batchTraceUpdate'){
+                msg.payload = await api.batchTrace.update(customerId, installationId,batchId, msg.batchTrace);
+            }
+            node.send(msg);
+        });
+    }
+    RED.nodes.registerType("ikologik-batchTrace",IkologikApiBatchTraceNode);
+
+
 
     // Credentials
       function ApiCredentialsNode (n){

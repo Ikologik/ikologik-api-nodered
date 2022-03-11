@@ -2,49 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="357e5abe-aa52-47c4-9e20-abf32950b895" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/icons/ikologik-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/IkologikApi.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IkologikApiCredentials.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/IkologikException.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/AbstractIkologikCustomerObject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/AbstractIkologikInstallationsObject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/AbstractIkologikObject.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Alert.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/AlertType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Batch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/BatchType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/DashboardWidget.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/DataImport.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/DataImportType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Parameter.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Report.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/ReportType.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Search.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/Tag.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/domain/TagAlertType.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ikologik-api.html" beforeDir="false" afterPath="$PROJECT_DIR$/ikologik-api.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ikologik-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/ikologik-api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AbstractIkologikCustomerService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AbstractIkologikInstallationService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AbstractIkologikService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AlertService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/AlertTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/BatchService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/BatchTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/DashboardService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/DashboardWidgetService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/DashboardWidgetTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/DataImportService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/DataImportTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/InstallationService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/ReportService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/ReportTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/TagAlertTypeService.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/TagService.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,6 +44,9 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ElienMaes\Development\Ikologik\node-red-ikologik-api" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ElienMaes\Development\Ikologik\node-red-ikologik-api\icons" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="test" type="NodeJSConfigurationType" path-to-js-file="test.js" working-dir="$PROJECT_DIR$">
@@ -99,7 +66,7 @@
       <workItem from="1644830780267" duration="39398000" />
       <workItem from="1645119698243" duration="2644000" />
       <workItem from="1645431360440" duration="20542000" />
-      <workItem from="1645475944736" duration="85519000" />
+      <workItem from="1645475944736" duration="114125000" />
     </task>
     <servers />
   </component>
