@@ -1,19 +1,5 @@
 
 const IkologikApi = require("ikologik-api-nodejs");
-// const Batch = require("ikologik-api-nodejs/domain/Batch");
-//
-// const functions = {
-//     batchtypeGet:{
-//         customerRequired:false,
-//         installationRequired:false,
-//         idRequired: true,
-//     },
-//     installationGet:{
-//         customerRequired:true,
-//         installationRequired: false,
-//         idRequired: true,
-//     }
-// }
 
 module.exports =  function(RED) {
     // BatchType-node
@@ -45,7 +31,7 @@ module.exports =  function(RED) {
             node.send(msg);
         });
     }
-    RED.nodes.registerType("ikologik-batchType",IkologikBatchTypeNode);
+    RED.nodes.registerType("ikologik-batchType", IkologikBatchTypeNode);
 
 
 
@@ -72,14 +58,14 @@ module.exports =  function(RED) {
             // Use Ikologik-api for requests
             const api = await node.credentials.api;
             if(node.function === 'batchFieldTypeGet'){
-                msg.payload = await api.batchFieldType.getById(customerId, installationId,batchTypeId,batchFieldTypeId);
+                msg.payload = await api.batchFieldType.getById(customerId, installationId,batchTypeId, batchFieldTypeId);
             }else if(node.function === 'batchFieldTypeList'){
-                msg.payload = await api.batchFieldType.list(customerId, installationId,batchTypeId);
+                msg.payload = await api.batchFieldType.list(customerId, installationId, batchTypeId);
             }
             node.send(msg);
         });
     }
-    RED.nodes.registerType("ikologik-batchFieldType",IkologikApiBatchFieldNode);
+    RED.nodes.registerType("ikologik-batchFieldType", IkologikApiBatchFieldNode);
 
 
 
@@ -108,18 +94,18 @@ module.exports =  function(RED) {
             // Use Ikologik-api for requests
             const api = await node.credentials.api;
             if(node.function === 'batchGetById'){
-                msg.payload = await api.batch.getById(customerId, installationId,batchId);
+                msg.payload = await api.batch.getById(customerId, installationId, batchId);
             }else if(node.function === 'batchGetByCode'){
-                msg.payload = await api.batch.getByCode(customerId,installationId, batchTypeId,batchCode);
+                msg.payload = await api.batch.getByCode(customerId, installationId, batchTypeId, batchCode);
             }else if(node.function === 'batchCreate'){
-                msg.payload = await api.batch.create(customerId, installationId,msg.batch);
+                msg.payload = await api.batch.create(customerId, installationId, msg.batch);
             }else if(node.function === 'batchUpdate'){
-                msg.payload = await api.batch.update(customerId, installationId,batchId, msg.batch);
+                msg.payload = await api.batch.update(customerId, installationId, batchId, msg.batch);
             }
             node.send(msg);
         });
     }
-    RED.nodes.registerType("ikologik-batch",IkologikApiBatchNode);
+    RED.nodes.registerType("ikologik-batch", IkologikApiBatchNode);
 
 
 
@@ -146,16 +132,18 @@ module.exports =  function(RED) {
             // Use Ikologik-api for requests
             const api = await node.credentials.api;
             if(node.function === 'batchTraceGetById'){
-                msg.payload = await api.batchTrace.getById(customerId, installationId,batchId,batchTraceId);
+                msg.payload = await api.batchTrace.getById(customerId, installationId, batchId, batchTraceId);
+            }else if(node.function === 'batchTraceList'){
+                msg.payload = await api.batchTrace.list(customerId, installationId, batchId);
             }else if(node.function === 'batchTraceCreate'){
-                msg.payload = await api.batchTrace.create(customerId, installationId,batchId,msg.batchTrace);
+                msg.payload = await api.batchTrace.create(customerId, installationId, batchId, msg.batchTrace);
             }else if(node.function === 'batchTraceUpdate'){
-                msg.payload = await api.batchTrace.update(customerId, installationId,batchId, msg.batchTrace);
+                msg.payload = await api.batchTrace.update(customerId, installationId, batchId, batchTraceId, msg.batchTrace);
             }
             node.send(msg);
         });
     }
-    RED.nodes.registerType("ikologik-batchTrace",IkologikApiBatchTraceNode);
+    RED.nodes.registerType("ikologik-batchTrace", IkologikApiBatchTraceNode);
 
 
 
