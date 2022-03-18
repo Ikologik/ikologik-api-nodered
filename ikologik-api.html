@@ -4,11 +4,12 @@
         category: 'ikologik',
         color: '#1ca38c',
         defaults: {
-            batchTypeName: {value:""},
+            Name: {value:""},
             batchTypeFunction:{value:""},
             batchTypeCustomerId:{value:""},
             batchTypeInstallationId:{value:""},
             batchTypeId:{value:""},
+            batchTypeName: {value:""},
             batchTypeCredentials: {value:"", type:"api-credentials"}
         },
         inputs:1,
@@ -22,8 +23,8 @@
 
 <script type="text/html" data-template-name="ikologik-batchType">
     <div class="form-row">
-        <label for="node-input-batchTypeName"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-batchTypeName" placeholder="Name">
+        <label for="node-input-Name"><i class="fa fa-tag"></i> Name</label>
+        <input type="text" id="node-input-Name" placeholder="Name">
     </div>
     <div class="form-row">
         <label for="node-input-batchTypeFunction"><i class="fa fa-code"></i> Function</label>
@@ -43,6 +44,10 @@
     <div class="form-row">
         <label for="node-input-batchTypeId"><i class="fa fa-industry"></i> BatchTypeId</label>
         <input type="text" id="node-input-batchTypeId" placeholder="BatchTypeId">
+    </div>
+    <div class="form-row">
+        <label for="node-input-batchTypeName"><i class="fa fa-industry"></i> BatchTypeName</label>
+        <input type="text" id="node-input-batchTypeName" placeholder="BatchTypeName">
     </div>
     </div> <div class="form-row">
         <label for="node-input-batchTypeCredentials"><i class="fa fa-industry"></i> Credentials</label>
@@ -144,8 +149,8 @@
     <div class="form-row">
         <label for="node-input-batchFunction"><i class="fa fa-code"></i> Function</label>
         <select type="text" id="node-input-batchFunction" placeholder="Function">
-            <option value="batchGetById">Batch getbyId</option>
-            <option value="batchGetByCode">Batch getbyCode</option>
+            <option value="batchGetById">Batch getById</option>
+            <option value="batchGetByCode">Batch getByCode</option>
             <option value="batchCreate">Batch create</option>
             <option value="batchUpdate">Batch update</option>
         </select>
