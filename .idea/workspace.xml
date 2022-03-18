@@ -3,8 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="357e5abe-aa52-47c4-9e20-abf32950b895" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ikologik-api.html" beforeDir="false" afterPath="$PROJECT_DIR$/ikologik-api.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ikologik-api.js" beforeDir="false" afterPath="$PROJECT_DIR$/ikologik-api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +62,7 @@
       <workItem from="1644830780267" duration="39398000" />
       <workItem from="1645119698243" duration="2644000" />
       <workItem from="1645431360440" duration="20542000" />
-      <workItem from="1645475944736" duration="124785000" />
+      <workItem from="1645475944736" duration="127982000" />
     </task>
     <servers />
   </component>

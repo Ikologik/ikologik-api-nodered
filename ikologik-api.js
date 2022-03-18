@@ -80,7 +80,6 @@ module.exports =  function(RED) {
         this.batchTypeId = config.batchBatchTypeId;
         this.batchId = config.batchId;
         this.batchCode = config.batchCode;
-        this.batchStatus = config.batchStatus;
         this.function = config.batchFunction;
         this.credentials = RED.nodes.getNode(config.batchCredentials);
         var node = this;
@@ -91,7 +90,7 @@ module.exports =  function(RED) {
             var customerId = node.customerId ? node.customerId : msg.customerId;
             var installationId = node.installationId ? node.installationId : msg.installationId;
             var batchTypeId = node.batchTypeId ? node.batchTypeId : msg.batchTypeId;
-            var batchStatus = node.batchStatus ? node.batchStatus : msg.batchStatus;
+            var batchCode = node.batchCode ? node.batchCode : msg.batchCode;
             var batchId = node.batchId ? node.batchId : msg.batchId;
 
             // Use Ikologik-api for requests
