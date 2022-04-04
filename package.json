@@ -1,36 +1,42 @@
 {
-  "author": "Ikologik",
+  "name": "ikologik-api-nodered",
+  "description": "A Node-RED API for the Ikologik platform.",
+  "author": "Ikologik NV",
+  "version": "0.0.010",
+  "license": "MIT",
+  "homepage": "https://github.com/Ikologik/ikologik-api-nodered#readme",
   "bugs": {
-    "url": "https://github.com/Ikologik/node-red-ikologik-api/issues"
-  },
-  "dependencies": {
-    "axios": "^0.26.0",
-    "esm": "^3.2.25",
-    "ikologik-api-nodejs": "^1.0.29"
-  },
-  "description": "An api for the Ikologik platform.",
-  "homepage": "https://github.com/Ikologik/node-red-ikologik-api#readme",
-  "license": "ISC",
-  "main": "ikologik-api.js.js",
-  "name": "@ikologik/node-red-ikologik-api",
-  "keywords": [
-    "node-red"
-  ],
-  "node-red": {
-    "version": ">=2.0.0",
-    "nodes": {
-      "ikologik-batchType": "ikologik-api.js"
-    }
+    "url": "https://github.com/Ikologik/ikologik-api-nodered/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Ikologik/node-red-ikologik-api.git"
+    "url": "git+https://github.com/Ikologik/ikologik-api-nodered.git"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "keywords": [
+    "datalogging",
+    "iot",
+    "iiot",
+    "node-red",
+    "nodered",
+    "REST",
+    "api",
+    "platform",
+    "Ikologik"
+  ],
+  "dependencies": {
+    "ikologik-api-nodejs": "1.0.033"
   },
-  "version": "0.0.9",
   "engines": {
     "node": ">=12.0.0"
+  },
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "ikologik-credentials": "ikologik-api/ikologik-credentials.js",
+      "ikologik-batch": "ikologik-api/ikologik-batch.js",
+      "ikologik-batch-field-type": "ikologik-api/ikologik-batch-field-type.js",
+      "ikologik-batch-trace": "ikologik-api/ikologik-batch-trace.js",
+      "ikologik-batch-type": "ikologik-api/ikologik-batch-type.js"
+    }
   }
 }

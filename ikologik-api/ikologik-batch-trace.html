@@ -1,0 +1,59 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ikologik-batchTrace', {
+		category: 'ikologik',
+		color: '#1ca38c',
+		defaults: {
+			batchTraceName: {value: ""},
+			batchTraceCustomerId: {value: ""},
+			batchTraceInstallationId: {value: ""},
+			batchTraceBatchId: {value: ""},
+			batchTraceId: {value: ""},
+			batchTraceCredentials: {value: "", type: "ikologik-credentials"},
+			batchTraceFunction: {value: ""}
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "icons/ikologik-icon.png",
+		paletteLabel: "batch trace",
+		label: function () {
+			return this.name || "batch trace";
+		}
+	});
+</script>
+
+<script type="text/html" data-template-name="ikologik-batchTrace">
+  <div class="form-row">
+    <label for="node-input-batchTraceName">Name</label>
+    <input type="text" id="node-input-batchTraceName" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceFunction">Function</label>
+    <select type="text" id="node-input-batchTraceFunction" placeholder="Function">
+      <option value="batchTraceGetById">BatchTrace getById</option>
+      <option value="batchTraceList">BatchTrace list</option>
+      <option value="batchTraceCreate">BatchTrace create</option>
+      <option value="batchTraceUpdate">BatchTrace update</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceCustomerId">CustomerId</label>
+    <input type="text" id="node-input-batchTraceCustomerId" placeholder="CustomerId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceInstallationId">InstallationId</label>
+    <input type="text" id="node-input-batchTraceInstallationId" placeholder="InstallationId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceBatchId">BatchId</label>
+    <input type="text" id="node-input-batchTraceBatchId" placeholder="BatchTypeId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceId">BatchTraceId</label>
+    <input type="text" id="node-input-batchTraceId" placeholder="BatchTraceId">
+  </div>
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTraceCredentials">Credentials</label>
+    <input type="text" id="node-input-batchTraceCredentials" placeholder="Credentials">
+  </div>
+</script>
