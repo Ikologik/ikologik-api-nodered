@@ -1,57 +1,56 @@
 <script type="text/javascript">
 	RED.nodes.registerType('ikologik-batchType', {
 		category: 'ikologik',
-		color: '#1ca38c',
+        icon: "icons/ikologik-icon.png",
+        color: '#1ca38c',
+        paletteLabel: "batch type",
+        label: function () {
+          return this.name || "batch type";
+        },
 		defaults: {
-			Name: {value: ""},
-			batchTypeFunction: {value: ""},
-			batchTypeCustomerId: {value: ""},
-			batchTypeInstallationId: {value: ""},
+			name: {value: ""},
+            server: {value: "", type: "ikologik-credentials"},
+			function: {value: ""},
+			customerId: {value: ""},
+			installationId: {value: ""},
 			batchTypeId: {value: ""},
 			batchTypeName: {value: ""},
-			batchTypeCredentials: {value: "", type: "ikologik-credentials"}
 		},
 		inputs: 1,
-		outputs: 1,
-		icon: "icons/ikologik-icon.png",
-		paletteLabel: "batch type",
-		label: function () {
-			return this.name || "batch type";
-		}
+		outputs: 2,
 	});
 </script>
 
 <script type="text/html" data-template-name="ikologik-batchType">
   <div class="form-row">
-    <label for="node-input-Name">Name</label>
-    <input type="text" id="node-input-Name" placeholder="Name">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeFunction">Function</label>
-    <select type="text" id="node-input-batchTypeFunction" placeholder="Function">
+    <label for="node-input-server" style="text-overflow: ellipsis; white-space: nowrap;">Credentials</label>
+    <input type="text" id="node-input-server">
+  </div>
+  <div class="form-row">
+    <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
+    <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
       <option value="batchTypeGetByName">Batchtype getByName</option>
       <option value="batchTypeList">Batchtype list</option>
     </select>
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeCustomerId">CustomerId</label>
-    <input type="text" id="node-input-batchTypeCustomerId" placeholder="CustomerId">
+    <label for="node-input-customerId" style="text-overflow: ellipsis; white-space: nowrap;">Customer</label>
+    <input type="text" id="node-input-customerId" placeholder="msg.customerId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeInstallationId">InstallationId</label>
-    <input type="text" id="node-input-batchTypeInstallationId" placeholder="InstallationId">
+    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">Installation</label>
+    <input type="text" id="node-input-installationId" placeholder="msg.installationId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeId">BatchTypeId</label>
-    <input type="text" id="node-input-batchTypeId" placeholder="BatchTypeId">
+    <label for="node-input-batchTypeId" style="text-overflow: ellipsis; white-space: nowrap;">Batch type</label>
+    <input type="text" id="node-input-batchTypeId" placeholder="msg.batchTypeId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeName">BatchTypeName</label>
-    <input type="text" id="node-input-batchTypeName" placeholder="BatchTypeName">
-  </div>
-  </div>
-  <div class="form-row">
-    <label for="node-input-batchTypeCredentials">Credentials</label>
-    <input type="text" id="node-input-batchTypeCredentials" placeholder="Credentials">
+    <label for="node-input-batchTypeName" style="text-overflow: ellipsis; white-space: nowrap;">BatchTypeName</label>
+    <input type="text" id="node-input-batchTypeName" placeholder="msg.batchTypeName">
   </div>
 </script>

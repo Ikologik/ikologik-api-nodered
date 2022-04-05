@@ -1,59 +1,60 @@
 <script type="text/javascript">
 	RED.nodes.registerType('ikologik-batchTrace', {
 		category: 'ikologik',
+        icon: "icons/ikologik-icon.png",
 		color: '#1ca38c',
+        paletteLabel: "batch trace",
+        label: function () {
+          return this.name || "batch trace";
+        },
 		defaults: {
-			batchTraceName: {value: ""},
-			batchTraceCustomerId: {value: ""},
-			batchTraceInstallationId: {value: ""},
-			batchTraceBatchId: {value: ""},
+			name: {value: ""},
+            server: {value: "", type: "ikologik-credentials"},
+            function: {value: ""},
+			customerId: {value: ""},
+			installationId: {value: ""},
+			batchId: {value: ""},
 			batchTraceId: {value: ""},
-			batchTraceCredentials: {value: "", type: "ikologik-credentials"},
-			batchTraceFunction: {value: ""}
+
+
 		},
 		inputs: 1,
-		outputs: 1,
-		icon: "icons/ikologik-icon.png",
-		paletteLabel: "batch trace",
-		label: function () {
-			return this.name || "batch trace";
-		}
+		outputs: 2,
 	});
 </script>
 
 <script type="text/html" data-template-name="ikologik-batchTrace">
   <div class="form-row">
-    <label for="node-input-batchTraceName">Name</label>
-    <input type="text" id="node-input-batchTraceName" placeholder="Name">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceFunction">Function</label>
-    <select type="text" id="node-input-batchTraceFunction" placeholder="Function">
-      <option value="batchTraceGetById">BatchTrace getById</option>
-      <option value="batchTraceList">BatchTrace list</option>
-      <option value="batchTraceCreate">BatchTrace create</option>
-      <option value="batchTraceUpdate">BatchTrace update</option>
+    <label for="node-input-server" style="text-overflow: ellipsis; white-space: nowrap;">Credentials</label>
+    <input type="text" id="node-input-server">
+  </div>
+  <div class="form-row">
+    <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
+    <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
+      <option value="batchTraceGetById">Get batchTrace by id</option>
+      <option value="batchTraceList">Get batchTrace list</option>
+      <option value="batchTraceCreate">Create batchTrace</option>
+      <option value="batchTraceUpdate">Update batchTrace</option>
     </select>
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceCustomerId">CustomerId</label>
-    <input type="text" id="node-input-batchTraceCustomerId" placeholder="CustomerId">
+    <label for="node-input-customerId" style="text-overflow: ellipsis; white-space: nowrap;">Customer</label>
+    <input type="text" id="node-input-customerId" placeholder="msg.customerId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceInstallationId">InstallationId</label>
-    <input type="text" id="node-input-batchTraceInstallationId" placeholder="InstallationId">
+    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">InstallationId</label>
+    <input type="text" id="node-input-installationId" placeholder="msg.installationId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceBatchId">BatchId</label>
-    <input type="text" id="node-input-batchTraceBatchId" placeholder="BatchTypeId">
+    <label for="node-input-batchId" style="text-overflow: ellipsis; white-space: nowrap;">Batch</label>
+    <input type="text" id="node-input-batchId" placeholder="msg.batchId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceId">BatchTraceId</label>
-    <input type="text" id="node-input-batchTraceId" placeholder="BatchTraceId">
-  </div>
-  </div>
-  <div class="form-row">
-    <label for="node-input-batchTraceCredentials">Credentials</label>
-    <input type="text" id="node-input-batchTraceCredentials" placeholder="Credentials">
+    <label for="node-input-batchTraceId" style="text-overflow: ellipsis; white-space: nowrap;">BatchTrace</label>
+    <input type="text" id="node-input-batchTraceId" placeholder="msg.batchTraceId">
   </div>
 </script>
