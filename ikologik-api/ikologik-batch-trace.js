@@ -30,9 +30,9 @@ module.exports = function (RED) {
 				} else if (node.function === 'batchTraceList') {
 					msg.payload = await node.server.api.batchTrace.listByCustomerAndInstallationAndBatch(customerId, installationId, batchId);
 				} else if (node.function === 'batchTraceCreate') {
-					msg.payload = await node.server.api.createByCustomerAndInstallationAndBatch(customerId, installationId, batchId, msg.batchTrace);
+					msg.payload = await node.server.api.batchTrace.createByCustomerAndInstallationAndBatch(customerId, installationId, batchId, msg.batchTrace);
 				} else if (node.function === 'batchTraceUpdate') {
-					msg.payload = await node.server.api.updateByCustomerAndInstallationAndBatchAndId(customerId, installationId, batchId, batchTraceId, msg.batchTrace);
+					msg.payload = await node.server.api.batchTrace.updateByCustomerAndInstallationAndBatchAndId(customerId, installationId, batchId, batchTraceId, msg.batchTrace);
 				} else{
 					throw new Error('Unsupported function');
 				}
