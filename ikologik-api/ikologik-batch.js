@@ -14,6 +14,7 @@ module.exports = function (RED) {
 		this.batchTypeId = config.batchTypeId;
 		this.batchId = config.batchId;
 		this.batchCode = config.batchCode;
+		this.batchStatus = config.batchStatus;
 
 		// Functionality
 		var node = this;
@@ -24,6 +25,7 @@ module.exports = function (RED) {
 			var batchTypeId = node.batchTypeId ? node.batchTypeId : msg.batchTypeId;
 			var batchId = node.batchId ? node.batchId : msg.batchId;
 			var batchCode = node.batchCode ? node.batchCode : msg.batchCode;
+			var batchStatus = node.batchStatus ? node.batchStatus : msg.batchStatus
 
 			// Execute
 			try {
@@ -37,7 +39,7 @@ module.exports = function (RED) {
 				} else if (node.function === 'batchUpdate') {
 					msg.payload = await node.server.api.batch.updateByCustomerAndInstallationAndId(customerId, installationId, batchId, msg.batch);
 				} else if (node.function === 'batchStatusUpdate') {
-					msg.payload = await node.server.api.batch.updateStatusByCustomerAndInstallationAndId(customerId, installationId, batchId, msg.batch);
+					msg.payload = await node.server.api.batch.updateStatusByCustomerAndInstallationAndId(customerId, installationId, batchId, batchStatus);
 				}
 				else {
 					throw new Error('Unsupported function');
