@@ -2,7 +2,7 @@
   "name": "ikologik-api-nodered",
   "description": "A Node-RED API for the Ikologik platform.",
   "author": "Ikologik NV",
-  "version": "0.0.010",
+  "version": "0.0.011",
   "license": "MIT",
   "homepage": "https://github.com/Ikologik/ikologik-api-nodered#readme",
   "bugs": {
