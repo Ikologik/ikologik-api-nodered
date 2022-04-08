@@ -36,7 +36,10 @@ module.exports = function (RED) {
 					msg.payload = await node.server.api.batch.createByCustomerAndInstallation(customerId, installationId, msg.batch);
 				} else if (node.function === 'batchUpdate') {
 					msg.payload = await node.server.api.batch.updateByCustomerAndInstallationAndId(customerId, installationId, batchId, msg.batch);
-				} else {
+				} else if (node.function === 'batchStatusUpdate') {
+					msg.payload = await node.server.api.batch.updateStatusByCustomerAndInstallationAndId(customerId, installationId, batchId, msg.batch);
+				}
+				else {
 					throw new Error('Unsupported function');
 				}
 				msg.error = null;
