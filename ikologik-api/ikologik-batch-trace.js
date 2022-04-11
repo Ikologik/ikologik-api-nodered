@@ -33,7 +33,9 @@ module.exports = function (RED) {
 					msg.payload = await node.server.api.batchTrace.createByCustomerAndInstallationAndBatch(customerId, installationId, batchId, msg.batchTrace);
 				} else if (node.function === 'batchTraceUpdate') {
 					msg.payload = await node.server.api.batchTrace.updateByCustomerAndInstallationAndBatchAndId(customerId, installationId, batchId, batchTraceId, msg.batchTrace);
-				} else{
+				} else if (node.function === 'batchTraceDelete') {
+					msg.payload = await node.server.api.batchTrace.deleteByCustomerAndInstallationAndBatchAndId(customerId, installationId, batchId, batchTraceId);
+				}else{
 					throw new Error('Unsupported function');
 				}
 				msg.error = null;

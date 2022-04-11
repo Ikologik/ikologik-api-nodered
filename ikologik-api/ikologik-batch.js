@@ -40,6 +40,8 @@ module.exports = function (RED) {
 					msg.payload = await node.server.api.batch.updateByCustomerAndInstallationAndId(customerId, installationId, batchId, msg.batch);
 				} else if (node.function === 'batchStatusUpdate') {
 					msg.payload = await node.server.api.batch.updateStatusByCustomerAndInstallationAndId(customerId, installationId, batchId, batchStatus);
+				} else if (node.function === 'batchDelete') {
+					msg.payload = await node.server.api.batch.deleteByCustomerAndInstallationAndId(customerId, installationId, batchId);
 				}
 				else {
 					throw new Error('Unsupported function');
