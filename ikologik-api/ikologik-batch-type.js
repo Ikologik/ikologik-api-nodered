@@ -1,5 +1,3 @@
-const IkologikApi = require("ikologik-api-nodejs");
-
 module.exports = function (RED) {
 
 	function IkologikBatchTypeNode(config) {
@@ -24,8 +22,10 @@ module.exports = function (RED) {
 			var batchTypeName = node.batchTypeName ? node.batchTypeName : msg.batchTypeName;
 
 			// Execute
-			try{
-				if (node.function === 'batchTypeGetByName') {
+			try {
+				if (node.function === 'batchTypeGetById') {
+					msg.payload = await node.server.api.batchType.getByCustomerAndInstallationAndId(customerId, installationId, batchTypeId);
+				} else if (node.function === 'batchTypeGetByName') {
 					msg.payload = await node.server.api.batchType.getByCustomerAndInstallationAndName(customerId, installationId, batchTypeName);
 				} else if (node.function === 'batchTypeList') {
 					msg.payload = await node.server.api.batchType.listByCustomerAndInstallation(customerId, installationId);

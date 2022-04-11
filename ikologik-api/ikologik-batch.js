@@ -1,5 +1,3 @@
-const IkologikApi = require("ikologik-api-nodejs");
-
 module.exports = function (RED) {
 
 	function IkologikApiBatchNode(config) {
@@ -30,7 +28,6 @@ module.exports = function (RED) {
 			// Execute
 			try {
 				if (node.function === 'batchGetById') {
-					console.log("Getting: "+batchId)
 					msg.payload = await node.server.api.batch.getByCustomerAndInstallationAndId(customerId, installationId, batchId);
 				} else if (node.function === 'batchGetByCode') {
 					msg.payload = await node.server.api.batch.getByCustomerAndInstallationAndBatchTypeAndCode(customerId, installationId, batchTypeId, batchCode);
@@ -42,8 +39,7 @@ module.exports = function (RED) {
 					msg.payload = await node.server.api.batch.updateStatusByCustomerAndInstallationAndId(customerId, installationId, batchId, batchStatus);
 				} else if (node.function === 'batchDelete') {
 					msg.payload = await node.server.api.batch.deleteByCustomerAndInstallationAndId(customerId, installationId, batchId);
-				}
-				else {
+				} else {
 					throw new Error('Unsupported function');
 				}
 				msg.error = null;
