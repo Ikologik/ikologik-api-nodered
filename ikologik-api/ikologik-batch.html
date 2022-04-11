@@ -1,0 +1,70 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ikologik-batch', {
+		category: 'ikologik',
+		icon: "icons/ikologik-icon.png",
+		color: '#1ca38c',
+		paletteLabel: "batch",
+		label: function () {
+			return this.name || "batch";
+		},
+		defaults: {
+			name: {value: ""},
+			server: {value: "", type: "ikologik-credentials"},
+			function: {value: ""},
+			customerId: {value: ""},
+			installationId: {value: ""},
+			batchTypeId: {value: ""},
+			batchId: {value: ""},
+			batchCode: {value: ""},
+			batchStatus: {value: ""}
+		},
+		inputs: 1,
+		outputs: 2
+	});
+</script>
+
+<script type="text/html" data-template-name="ikologik-batch">
+  <div class="form-row">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-server" style="text-overflow: ellipsis; white-space: nowrap;">Credentials</label>
+    <input type="text" id="node-input-server">
+  </div>
+  <div class="form-row">
+    <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
+    <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
+      <option value="batchGetById">Get batch by id</option>
+      <option value="batchGetByCode">Get batch by code</option>
+      <option value="batchCreate">Create batch</option>
+      <option value="batchUpdate">Update batch</option>
+      <option value="batchDelete">Delete batch</option>
+      <option value="batchStatusUpdate">Update batch status</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-customerId" style="text-overflow: ellipsis; white-space: nowrap;">Customer</label>
+    <input type="text" id="node-input-customerId" placeholder="msg.customerId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">Installation</label>
+    <input type="text" id="node-input-installationId" placeholder="msg.installationId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTypeId" style="text-overflow: ellipsis; white-space: nowrap;">Batch type</label>
+    <input type="text" id="node-input-batchTypeId" placeholder="msg.batchTypeId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchId" style="text-overflow: ellipsis; white-space: nowrap;">Batch</label>
+    <input type="text" id="node-input-batchId" placeholder="msg.batchId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchCode" style="text-overflow: ellipsis; white-space: nowrap;">Batch code</label>
+    <input type="text" id="node-input-batchCode" placeholder="msg.batchCode">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchStatus" style="text-overflow: ellipsis; white-space: nowrap;">Batch status</label>
+    <input type="text" id="node-input-batchStatus" placeholder="msg.batchStatus">
+  </div>
+</script>

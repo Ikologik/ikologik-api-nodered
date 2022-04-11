@@ -1,0 +1,57 @@
+<script type="text/javascript">
+	RED.nodes.registerType('ikologik-batchType', {
+		category: 'ikologik',
+		icon: "icons/ikologik-icon.png",
+		color: '#1ca38c',
+		paletteLabel: "batch type",
+		label: function () {
+			return this.name || "batch type";
+		},
+		defaults: {
+			name: {value: ""},
+			server: {value: "", type: "ikologik-credentials"},
+			function: {value: ""},
+			customerId: {value: ""},
+			installationId: {value: ""},
+			batchTypeId: {value: ""},
+			batchTypeName: {value: ""},
+		},
+		inputs: 1,
+		outputs: 2,
+	});
+</script>
+
+<script type="text/html" data-template-name="ikologik-batchType">
+  <div class="form-row">
+    <label for="node-input-name">Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-server" style="text-overflow: ellipsis; white-space: nowrap;">Credentials</label>
+    <input type="text" id="node-input-server">
+  </div>
+  <div class="form-row">
+    <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
+    <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
+      <option value="batchTypeGetById">Get batch type by id</option>
+      <option value="batchTypeGetByName">Get batch type by name</option>
+      <option value="batchTypeList">Get batch type list</option>
+    </select>
+  </div>
+  <div class="form-row">
+    <label for="node-input-customerId" style="text-overflow: ellipsis; white-space: nowrap;">Customer</label>
+    <input type="text" id="node-input-customerId" placeholder="msg.customerId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">Installation</label>
+    <input type="text" id="node-input-installationId" placeholder="msg.installationId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTypeId" style="text-overflow: ellipsis; white-space: nowrap;">Batch type</label>
+    <input type="text" id="node-input-batchTypeId" placeholder="msg.batchTypeId">
+  </div>
+  <div class="form-row">
+    <label for="node-input-batchTypeName" style="text-overflow: ellipsis; white-space: nowrap;">Batch type name</label>
+    <input type="text" id="node-input-batchTypeName" placeholder="msg.batchTypeName">
+  </div>
+</script>

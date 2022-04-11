@@ -1,0 +1,8 @@
+/node_modules/
+/.npm/
+
+### IntelliJ IDEA ###
+.idea
+
+### VS Code ###
+.vscode
