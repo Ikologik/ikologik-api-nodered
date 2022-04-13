@@ -1,22 +1,20 @@
 <script type="text/javascript">
 	RED.nodes.registerType('ikologik-batchTrace', {
 		category: 'ikologik',
-        icon: "icons/ikologik-icon.png",
+		icon: "icons/ikologik-icon.png",
 		color: '#1ca38c',
-        paletteLabel: "batch trace",
-        label: function () {
-          return this.name || "batch trace";
-        },
+		paletteLabel: "batch trace",
+		label: function () {
+			return this.name || "batch trace";
+		},
 		defaults: {
 			name: {value: ""},
-            server: {value: "", type: "ikologik-credentials"},
-            function: {value: ""},
+			server: {value: "", type: "ikologik-credentials"},
+			function: {value: ""},
 			customerId: {value: ""},
 			installationId: {value: ""},
 			batchId: {value: ""},
 			batchTraceId: {value: ""},
-
-
 		},
 		inputs: 1,
 		outputs: 2,
@@ -35,11 +33,11 @@
   <div class="form-row">
     <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
     <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
-      <option value="batchTraceGetById">Get batchTrace by id</option>
-      <option value="batchTraceList">Get batchTrace list</option>
-      <option value="batchTraceCreate">Create batchTrace</option>
-      <option value="batchTraceUpdate">Update batchTrace</option>
-      <option value="batchTraceDelete">Delete batchTrace</option>
+      <option value="batchTraceGetById">Get batch trace by id</option>
+      <option value="batchTraceList">Get batch trace list</option>
+      <option value="batchTraceCreate">Create batch trace</option>
+      <option value="batchTraceUpdate">Update batch trace</option>
+      <option value="batchTraceDelete">Delete batch trace</option>
     </select>
   </div>
   <div class="form-row">
@@ -47,7 +45,7 @@
     <input type="text" id="node-input-customerId" placeholder="msg.customerId">
   </div>
   <div class="form-row">
-    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">InstallationId</label>
+    <label for="node-input-installationId" style="text-overflow: ellipsis; white-space: nowrap;">Installation</label>
     <input type="text" id="node-input-installationId" placeholder="msg.installationId">
   </div>
   <div class="form-row">
@@ -55,7 +53,7 @@
     <input type="text" id="node-input-batchId" placeholder="msg.batchId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTraceId" style="text-overflow: ellipsis; white-space: nowrap;">BatchTrace</label>
+    <label for="node-input-batchTraceId" style="text-overflow: ellipsis; white-space: nowrap;">Batch trace</label>
     <input type="text" id="node-input-batchTraceId" placeholder="msg.batchTraceId">
   </div>
 </script>

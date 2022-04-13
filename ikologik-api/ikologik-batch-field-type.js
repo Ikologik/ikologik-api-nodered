@@ -1,6 +1,6 @@
 module.exports = function (RED) {
 
-	function IkologikApiBatchFieldNode(config) {
+	function IkologikApiBatchFieldTypeNode(config) {
 		RED.nodes.createNode(this, config);
 
 		// Get configuration
@@ -39,6 +39,6 @@ module.exports = function (RED) {
 		});
 	}
 
-	RED.nodes.registerType("ikologik-batchFieldType", IkologikApiBatchFieldNode);
+	RED.nodes.registerType("ikologik-batchFieldType", IkologikApiBatchFieldTypeNode);
 
 }

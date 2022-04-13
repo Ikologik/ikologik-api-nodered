@@ -1,15 +1,15 @@
 <script type="text/javascript">
 	RED.nodes.registerType('ikologik-batchType', {
 		category: 'ikologik',
-        icon: "icons/ikologik-icon.png",
-        color: '#1ca38c',
-        paletteLabel: "batch type",
-        label: function () {
-          return this.name || "batch type";
-        },
+		icon: "icons/ikologik-icon.png",
+		color: '#1ca38c',
+		paletteLabel: "batch type",
+		label: function () {
+			return this.name || "batch type";
+		},
 		defaults: {
 			name: {value: ""},
-            server: {value: "", type: "ikologik-credentials"},
+			server: {value: "", type: "ikologik-credentials"},
 			function: {value: ""},
 			customerId: {value: ""},
 			installationId: {value: ""},
@@ -33,8 +33,9 @@
   <div class="form-row">
     <label for="node-input-function" style="text-overflow: ellipsis; white-space: nowrap;">Function</label>
     <select type="text" id="node-input-function" placeholder="Function" style="display: inline-block; width: 70%;">
-      <option value="batchTypeGetByName">Batchtype getByName</option>
-      <option value="batchTypeList">Batchtype list</option>
+      <option value="batchTypeGetById">Get batch type by id</option>
+      <option value="batchTypeGetByName">Get batch type by name</option>
+      <option value="batchTypeList">Get batch type list</option>
     </select>
   </div>
   <div class="form-row">
@@ -50,7 +51,7 @@
     <input type="text" id="node-input-batchTypeId" placeholder="msg.batchTypeId">
   </div>
   <div class="form-row">
-    <label for="node-input-batchTypeName" style="text-overflow: ellipsis; white-space: nowrap;">BatchTypeName</label>
+    <label for="node-input-batchTypeName" style="text-overflow: ellipsis; white-space: nowrap;">Batch type name</label>
     <input type="text" id="node-input-batchTypeName" placeholder="msg.batchTypeName">
   </div>
 </script>
